@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#CF0000"
+        android:onClick="spin"
+        android:text="Spin!"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#E3B93B"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/frame1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#000000"
+            android:rotationX="0"
+            android:scaleX="0.875"
+            android:scaleY="0.875">
+
+            <TextView
+                android:id="@+id/num1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lucky_numb1"
+                android:textColor="#00BCD4"
+                android:textSize="50sp" />
+
+        </FrameLayout>
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@+id/frame2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#000000"
+            android:rotationX="0"
+            android:scaleX="0.875"
+            android:scaleY="0.875">
+
+            <TextView
+                android:id="@+id/num2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lucky_numb2"
+                android:textColor="#00BCD4"
+                android:textSize="50sp" />
+
+        </FrameLayout>
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@+id/frame3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#000000"
+            android:scaleX="0.875"
+            android:scaleY="0.875">
+
+            <TextView
+                android:id="@+id/num3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lucky_numb3"
+                android:textColor="#00BCD4"
+                android:textSize="50sp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/plane747"
+        android:layout_width="687dp"
+        android:layout_height="555dp"
+        android:foregroundGravity="center"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:translationY="-5dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/img_1" />
+
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/coins"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plane747"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageButton
+        android:id="@+id/button2"
+        android:layout_width="75dp"
+        android:layout_height="65dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="showRewards"
+        android:src="@drawable/gold_background"
+        android:text="Button"
+        android:tintMode="screen"
+        app:cornerRadius="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plane747"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:tint="#4A3E3E3E" />
+
+    <ScrollView
+        android:id="@+id/prizeList"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_width="375dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="1dp"
+        android:foregroundGravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/balanceText">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:gravity="top|start"
+            android:orientation="vertical">
+
+        <TextView
+            android:text="Prizes:\n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:foregroundGravity="center"
+            android:layout_gravity="center"
+            android:textStyle="bold|italic"/>
+
+        <TextView
+            android:text="1 1 1: Gain 100 Coins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="100dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:text="2 2 2: Gain 250 Coins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="100dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:text="3 3 3: Gain 500 Coins"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingStart="100dp"
+            android:paddingBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="4 4 4: Gain 1000 Coins"
+            android:gravity="center"
+            android:paddingStart="100dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="5 5 5: Gain 2000 Coins"
+            android:gravity="center"
+            android:paddingStart="100dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="6 6 6: Loose 60000 Coins"
+            android:gravity="center"
+            android:paddingStart="100dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="7 7 7: Jackpot. Gain 500000 Coins"
+            android:gravity="center"
+            android:paddingStart="100dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="1 2 3: Gain 12345 Coins"
+            android:gravity="center"
+            android:paddingStart="100dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="4 5 6: Gain 4560 Squid Game Coins"
+            android:gravity="center"
+            android:paddingStart="100dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="\nThere are several easter egg combinations that you may find on your own."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:textStyle="italic"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

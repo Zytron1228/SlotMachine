@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">SlotMachine</string>
+    <string name="lucky_numb1">%s</string>
+    <string name="lucky_numb2">%s</string>
+    <string name="lucky_numb3">%s</string>
+    <string name="coins">Coins: %s</string>
+
+
+</resources>
